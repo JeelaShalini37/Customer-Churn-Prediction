@@ -1,65 +1,171 @@
-# Customer-Churn-Prediction
-This project analyzes and predicts customer churn using a bank’s customer dataset. As a Data Analyst, I applied exploratory analysis, feature engineering, and machine learning techniques to identify patterns behind customer attrition and provide actionable insights for business teams.
+🎯 Customer Churn Prediction with Machine Learning
+📌 Project Overview
+This project uses machine learning models to accurately predict which customers are likely to churn, enabling businesses to proactively intervene and minimize revenue loss. The approach combines rigorous data preprocessing, exploratory analysis, multiple classification models, and model interpretability to deliver insights and actionable outcomes.
 
- Objectives
-Identify key features influencing customer churn.
+🎯 Objectives
+Build robust predictive models (e.g., Logistic Regression, Random Forest, XGBoost) to classify churn vs. retention.
 
-Build a predictive model to classify customers at risk of leaving.
+Address class imbalance through resampling techniques like SMOTE, SMOTE-ENN, or under/oversampling methods.
 
-Provide data-driven insights to help reduce churn and improve customer retention.
+Provide explainable AI via interpretation methods (e.g., SHAP values) to identify the most influential churn-driving features. 
+ResearchGate
++8
+GitHub
++8
+GitHub
++8
+PLOS
++2
+GitHub
++2
+Braze
++2
+arXiv
++3
+ResearchGate
++3
+ResearchGate
++3
 
-📁 Dataset
-Source: Kaggle – Bank Customer Churn Modeling
+Deliver meaningful metrics and visualizations to assess performance and support business decisions.
 
-10,000+ rows | 14 columns
+📁 Data Description
+Source: Public datasets commonly used for churn prediction, such as the Telco Customer Churn dataset.
 
-Target variable: Exited (1 = churned, 0 = retained)
+Features may include:
 
-🛠 Technologies Used
-Python: Data cleaning, feature engineering, modeling
+Customer demographics: tenure, contract type, service usage
 
-Libraries: pandas, numpy, seaborn, matplotlib, scikit-learn
+Billing: monthly charges, total charges
 
-SQL: Basic data querying and validation
+Services: availability of addons (voice mail, streaming, etc.)
 
-Machine Learning: Random Forest Classifier
+Churn flag (Yes/No) as the target variable
 
-Visualization: Seaborn, Matplotlib, Tableau (external dashboard)
+Class Imbalance: Churn instances typically constitute a small fraction of the data—necessitating resampling techniques. 
+GitHub
++2
+GitHub
++2
+GitHub
++2
+GitHub
++1
+GitHub
++1
+GitHub
++1
+GitHub
++1
 
-IDE: Spyder
+🛠️ Tools & Technologies
+Python, with modules:
 
-✅ Key Steps
-Data Cleaning & Preprocessing
+pandas, numpy for data manipulation
 
-Removed irrelevant features (CustomerId, Surname, RowNumber)
+scikit-learn for ML modeling and metrics
 
-One-hot encoded Geography and Gender columns
+XGBoost / LightGBM for powerful gradient boosting classifiers
 
-Split into training (80%) and test (20%) sets
+SHAP for explainable AI and feature impact analysis 
+ResearchGate
+arXiv
 
-Exploratory Data Analysis (EDA)
+Visualization: Matplotlib, Seaborn for EDA and results plotting
 
-Visualized distributions and churn ratios by age, balance, tenure, geography
+Optional: Flask for model deployment; Docker for containerization
 
-Identified patterns via correlation heatmaps and bar plots
+🧠 Methodology
+1. Exploratory Data Analysis (EDA)
+Assess data distribution and imbalance
 
-Model Training & Evaluation
+Identify correlations, feature distributions, churn-related patterns
 
-Used RandomForestClassifier with 200 estimators
+2. Preprocessing & Feature Engineering
+Clean missing or inconsistent data
 
-Achieved ~80% accuracy on test data
+Encode categorical variables (one-hot or label encoding)
 
-Evaluated using confusion matrix, precision, recall, and F1 score
+Normalize and scale numerical features
 
-Business Insights & Visualization
+Handle class imbalance with SMOTE / SMOTE-ENN or similar techniques 
+GitHub
+ResearchGate
++5
+ResearchGate
++5
+PLOS
++5
+GitHub
+reddit.com
 
-Created churn breakdown by geography, credit score, and tenure
+3. Model Training & Selection
+Train multiple classification algorithms such as Logistic Regression, Random Forest, XGBoost
 
-Delivered recommendations for proactive customer engagement
+Perform hyperparameter tuning via GridSearch or cross-validation
 
-📈 Results
-Identified high-risk customer segments based on activity and tenure
+Evaluate models using metrics like Accuracy, Precision, Recall, F1-score, and AUC-ROC
 
-Model achieved strong performance and interpretability
+4. Interpretability
+Use SHAP values to visualize the impact of each feature on model predictions 
+arXiv
++1
+PLOS
++1
 
-Business insights supported targeted retention campaigns
+Identify key churn predictors (e.g. tenure, monthly charges, number of services)
+
+5. Results & Evaluation
+Compare model performance, prioritize high recall and balanced precision
+
+Present final confusion matrix, ROC curves, and feature importance plots
+
+📈 Expected Results
+Metric	Typical Performance
+Accuracy	~85–90%
+ROC-AUC	~0.90+ (strong classifiers)
+F1-Score (Churn class)	~0.75–0.85
+
+Recall for churn detection is prioritized to minimize false negatives.
+
+SHAP analysis helps visualize top drivers of churn, offering insights for retention strategies.
+
+📂 Suggested Folder Structure
+bash
+Copy
+Edit
+Customer-Churn-Prediction/
+├── data/
+│   └── telecom_churn.csv         # Raw dataset
+├── notebooks/
+│   └── exploratory_analysis.ipynb
+│   └── modeling_and_evaluation.ipynb
+├── src/
+│   ├── preprocess.py             # Data cleaning & resampling
+│   ├── train_model.py            # Model training & evaluation
+│   └── interpret.py              # SHAP analysis utilities
+├── visuals/
+│   ├── churn_distribution.png
+│   ├── roc_curves.png
+│   └── feature_importance.png
+├── app/
+│   ├── app.py                    # Flask app for serving predictions
+│   └── templates/
+├── requirements.txt
+└── README.md
+💡 Business Impact
+Early prediction of at-risk customers allows for targeted engagement strategies and resource-efficient retention campaigns.
+
+Explainability helps customer success teams understand “why” churn is happening and tailor interventions.
+
+The model serves as a foundational framework for cross-sell, upsell, and personalized retention strategies.
+
+🚀 Future Enhancements
+Integrate advanced models like XGBoost or LightGBM with improved performance via resampling & tuning.
+
+Deploy as a web service using Flask or FastAPI, packaged with Docker for easy setup.
+
+Implement real-time scoring pipelines, A/B testing, or backtesting for retention strategy effectiveness.
+
+Add time-based features, customer lifetime value estimators, or cross-domain behavioral inputs.
+
